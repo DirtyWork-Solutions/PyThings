@@ -8,6 +8,9 @@ class AbstractEntity(BaseEntity):
     Base class for all abstract entities.
     """
     def __init__(self, name: str = 'unknown abstract entity'):
+        """
+        :param name:
+        """
         self.name = name
 
 class Attribute(AbstractEntity):
@@ -29,13 +32,21 @@ class Set(AbstractEntity):
     def add_member(self, new_member):
         """
         Add a member to the set.
+
         :param new_member:
         :return: nothing
         """
         self.members.append(new_member)
 
+
     def remove_member(self):
+        """
+        Remove a member from the collection/set.
+        :return:
+        """
         raise NotImplementedError()
 
     def __repr__(self):
         return f"Set({self.name}): {self.members}"
+
+
