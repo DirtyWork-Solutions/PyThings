@@ -1,6 +1,10 @@
 # PyThings
 
-One Paragraph of the project description
+__THIS PROJECT IS IN ALPHA!__ _YOU HAVE  BE WARNED!_
+****
+
+The __PyThings__ project is an attempt at providing a modular and comprehensive library for abstracting, managing and
+defining... well everything and anything.
 
 Initially appeared on
 [gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2). But the page cannot open anymore so that is why I have moved it here.
@@ -72,6 +76,8 @@ available, see the [tags on this
 repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
 
 ## Authors
+The __PyThings__ project was founded and is driven by _DirtyWork Solutions_.
+
   - **Aidan Hogg** - *Launched the project* -
     [DirtyWork Solutions](https://www.dirtywork.solutions/)
   - **Billie Thompson** - *Provided README Template* -

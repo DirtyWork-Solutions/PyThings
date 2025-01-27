@@ -1,8 +1,19 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 
+from foundational.time import Time
 
 class BaseEntity(ABC):
-    pass
+    """
+    Base class for all entity classes.
+    """
+    @abstractmethod
+    def __init__(self):
+        pass
 
 class BaseRelationship(ABC):
-    pass
+    """
+    Base class for all relationship classes.
+    """
+    @abstractmethod
+    def __init__(self):
+        pass
