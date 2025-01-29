@@ -1,14 +1,27 @@
 import os
 
+from utils.extensions._handler import PyThingsExtension
+
+
+class What3WordsExtension(PyThingsExtension):
+    """
+     """
+    def __init__(self):
+        super().__init__()
+
+
 """
-Provides native support and integration with the what3words project and API.
+Module that introduces a What3Words extension to the PyThings framework.
 """
+
 
 def api_key_check():  # TODO: Add check logic and rename method
     if "W3W_API_KEY" not in os.environ.keys():
         raise KeyError("Missing Environment Variable: what3words integration requires 'W3W_API_KEY' be set.")
 
-def coordinates_to_words(coordinates: dict | tuple | str, use_deliminator: str | bool = False) -> tuple | str:  # TODO: Implement logic
+
+def coordinates_to_words(coordinates: dict | tuple | str,
+                         use_deliminator: str | bool = False) -> tuple | str:  # TODO: Implement logic
     """
     Convert a **longitude** and **latitude** into a **what3words**.
     :param coordinates:
@@ -19,6 +32,7 @@ def coordinates_to_words(coordinates: dict | tuple | str, use_deliminator: str |
         api_key_check()
     except KeyError as e:
         print(e)
+
 
 def words_to_coordinates(words: str | tuple) -> tuple | dict | None:  # TODO: Implement logic
     """

@@ -41,15 +41,15 @@ for a little demo
 
 Explain how to run the automated tests for this system
 
-### Sample Tests
+### General Extensions
 
-Explain what these tests test and why
+General extensions are those generally affecting the functionality of the package.
 
     Give an example
 
-### Style test
+### Domain Specific Extensions
 
-Checks if the best practices and the right coding style has been used.
+DSFs are those that are specific to a particular domain or use case, and typically expand or form part of the lower ontology.
 
     Give an example
 
