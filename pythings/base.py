@@ -27,12 +27,21 @@ class Thing(BaseThing):
         """
         super().__init__()
 
+class FoundationalThing(Thing):
+    """
+    A foundational **Thing**.  # TODO: Improve these docs
+    """
+
+
+    def __init__(self):
+        super().__init__()
+
 class Attribute(BaseThing):
     """
     A generic abstraction for an *attribute* of a **Thing**.
     """
 
-    @abstractmethod
+
     def __init__(self):
         super().__init__()
 
@@ -41,7 +50,7 @@ class Metadata(BaseThing):
     A generic abstraction for *metadata* of a **Thing**.
     """
 
-    @abstractmethod
+
     def __init__(self):
         super().__init__()
 
@@ -59,6 +68,6 @@ class Relationship(BaseRelationship):
     Represents a *relationship* between **Things**.
     """
 
-    @abstractmethod
+
     def __init__(self):
         super().__init__()
