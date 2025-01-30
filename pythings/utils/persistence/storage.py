@@ -1,7 +1,6 @@
-from utils.persistence.files import FileManager, LocalDestination, RemoteDestination, BaseFileDestination
-from utils.persistence.object import ObjectManager, ObjectDestination
-from utils.persistence.records import DatabaseManager, BaseDatabaseDestination
-
+from pythings.utils.persistence.files import FileManager
+from pythings.utils.persistence.object import ObjectManager
+from pythings.utils.persistence.records import DatabaseManager
 
 
 class StorageLocations:  # TODO: Make a singleton
