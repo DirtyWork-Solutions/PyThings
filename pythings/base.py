@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import Any
 
 """
 Base classes and abstractions.
@@ -45,9 +46,8 @@ class Attribute(BaseThing):
     A generic abstraction for an *attribute* of a **Thing**.
     """
 
-    def __init__(self):
+    def __init__(self, name: str, value: Any, description: str = None):
         super().__init__()
-
 
 class Metadata(BaseThing):
     """
@@ -75,3 +75,5 @@ class Relationship(BaseRelationship):
 
     def __init__(self):
         super().__init__()
+
+
