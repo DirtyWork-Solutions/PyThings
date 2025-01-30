@@ -1,5 +1,8 @@
 from pythings.base import Thing, Metadata, Attribute
 
+"""
+Entities are the basic building blocks of the ontology. They can be physical or abstract.
+"""
 
 class BaseEntity(Thing):
     """
@@ -27,28 +30,42 @@ class Entity(BaseEntity):
     def add_attribute(self, attribute: Attribute | dict):
         """
         Add an attribute to the entity.
+
         :param attribute: the attribute to add.
         :return: nothing
+        :raises KeyError: If the attribute is already present.
         """
         self.attributes.append(attribute)
 
     def remove_attribute(self, attribute: Attribute | str):
         """
         Remove an attribute from the entity.
+
         :param attribute: the attribute to remove.
         :return: nothing
+        :raises KeyError: If the attribute is not found.
         """
         self.attributes.remove(attribute)
 
-    def update_attribute(self, attribute: Attribute | str):
+    def update_attribute(self, attribute: Attribute):
         """
         Update an attribute.
-        :param attribute: the attribute to update.
+
+        :param attribute: the attribute to be updated.
         :return: nothing
+        :raises KeyError: If the attribute is not found.
         """
         self.attributes.remove(attribute)
         self.attributes.append(attribute)
 
+    def get_attribute(self, attribute: Attribute | str):  # TODO: create method
+        """
+        Get an attribute from the entity.
+
+        :param attribute: the attribute to get.
+        :return: the attribute value.
+        """
+        raise NotImplementedError("Get attribute method not implemented.")
 
 
 class PhysicalThing(Entity):
@@ -59,6 +76,7 @@ class PhysicalThing(Entity):
                  is_process: bool = False):
         super().__init__(name, description)
         self.is_process = is_process
+
 
     def __repr__(self):
         return f"PhysicalThing(name={self.name}, description={self.description})"
@@ -88,3 +106,5 @@ if __name__ == '__main__':
     device = PhysicalThing('hammer', 'a tool for hitting nails')
     print(test)
     print(device)
+
+    test = Entity('aidan', 'a person')
