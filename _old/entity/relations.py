@@ -1,6 +1,6 @@
 from typing import Any
 
-from entity.bases import BaseRelationship, BaseEntity
+from _old.entity.bases import BaseRelationship, BaseEntity
 
 class Relationship(BaseRelationship):
     """

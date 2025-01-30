@@ -1,4 +1,4 @@
-from entity.bases import BaseEntity
+from _old.entity.bases import BaseEntity
 
 
 class PhysicalEntity(BaseEntity):

@@ -1,4 +1,4 @@
-from pythings.utils import words_to_coordinates, coordinates_to_words, api_key_check
+from pythings.utils.extensions.what3words import words_to_coordinates, coordinates_to_words, api_key_check
 
 class Location:
     """

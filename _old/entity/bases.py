@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from uuid import UUID, uuid4
 
-from foundational.time import Time
+from _old.foundational.time import Time
 
 class BaseEntity(ABC):
     """

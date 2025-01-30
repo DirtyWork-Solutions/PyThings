@@ -1,6 +1,6 @@
 from typing import Any, List
 
-from entity.bases import BaseEntity
+from _old.entity.bases import BaseEntity
 
 
 class AbstractEntity(BaseEntity):
