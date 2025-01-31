@@ -109,13 +109,16 @@ class Metadata(BaseThing):
 
     def get_mappings(self):
         """
-        Get all the mappings.
+        Get all the mappings for *Metadata*.
         :return: (dict) mappings
         """
         return self._mappings
 
     @property
     def mappings(self):
+        """
+        :return: (dict) Metadata mappings.
+        """
         return self.get_mappings()
 
 
@@ -126,6 +129,9 @@ class BaseRelationship(BaseThing):
 
     @abstractmethod
     def __init__(self):
+        """
+
+        """
         super().__init__()
         self.metadata = Metadata()
 
@@ -136,6 +142,9 @@ class Relationship(BaseRelationship):
     """
 
     def __init__(self):
+        """
+
+        """
         super().__init__()
 
 

@@ -1,6 +1,6 @@
 import os
 
-from pythings.utils.extensions._handler import PyThingsExtension
+from pythings.utils.plugin._handler import PyThingsExtension
 
 
 class What3WordsExtension(PyThingsExtension):
