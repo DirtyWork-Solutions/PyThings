@@ -148,6 +148,28 @@ class Relationship(BaseRelationship):
         super().__init__()
 
 
+class BaseInterface(ABC):
+    """
+    Base class for all **interfaces**.
+    """
+
+    @abstractmethod
+    def __init__(self):
+        """
+
+        """
+        pass
+
+class Interface(BaseInterface):
+    """
+    Represents an *interface* for a **Thing**.
+    """
+
+    def __init__(self):
+        """
+
+        """
+        super().__init__()
 
 if __name__ == '__main__':
     test = Metadata()

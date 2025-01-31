@@ -15,10 +15,18 @@ class StorageLocations:  # TODO: Make a singleton
 
     @property
     def files(self):
+        """
+        Get all file destinations.
+        :return:
+        """
         return self._file_locations
 
     @property
     def objects(self):
+        """
+        Get all object destinations.
+        :return:
+        """
         return self._object_locations
 
     @property
