@@ -26,7 +26,7 @@ class BaseThing(ABC):
         pass
 
     @abstractmethod
-    def from_dict(cls, data: Dict[str, Any]) -> 'BaseThing':
+    def from_dict(self, data: Dict[str, Any]) -> 'BaseThing':
         pass
 
     def to_json(self) -> str:
@@ -112,70 +112,123 @@ class Attribute(BaseThing):
     def __hash__(self) -> int:
         return hash((self.name, self.value, self.description))
 
-class Metadata(BaseThing):
+class RelationalMappingsMixin:
     """
-    A generic abstraction for *metadata* of a **Thing**.
+    Mixin class for external relational mappings.
+    """
+
+    def __init__(self):
+        self._mappings = {
+            "sql": None,
+            "neo4j": None,
+            "sumo": None
+        }
+
+    def get_mappings(self) -> Dict[str, Any]:
+        """
+        Get all the mappings.
+
+        :return: (*dict*) mappings
+        """
+        return self._mappings
+
+    def set_mapping(self, key: str, value: Any):
+        """
+        Set a mapping for a specific key.
+
+        :param key: (*str*) the key for the mapping.
+        :param value: (*Any*) the value for the mapping.
+        :raises ValueError: if the key is not a valid mapping key.
+        """
+        if key not in self._mappings:
+            raise ValueError(f"Invalid mapping key: {key}")
+        self._mappings[key] = value
+
+    def remove_mapping(self, key: str):
+        """
+        Remove a mapping for a specific key.
+
+        :param key: (*str*) the key for the mapping.
+        :raises ValueError: if the key is not a valid mapping key.
+        """
+        if key not in self._mappings:
+            raise ValueError(f"Invalid mapping key: {key}")
+        self._mappings[key] = None
+
+    def update_mappings(self, mappings: Dict[str, Any]):
+        """
+        Update multiple mappings.
+
+        :param mappings: (*dict*) the mappings to update.
+        :raises ValueError: if any key is not a valid mapping key.
+        """
+        for key, value in mappings.items():
+            if key not in self._mappings:
+                raise ValueError(f"Invalid mapping key: {key}")
+            self._mappings[key] = value
+
+    @property
+    def mappings(self) -> Dict[str, Any]:
+        """
+        :return: (*dict*) mappings.
+        """
+        return self.get_mappings()
+
+class Metadata(BaseThing, RelationalMappingsMixin):
+    """
+    A generic mixin abstraction for *metadata* of a **Thing**. Includes relational mappings
     """
 
     def __init__(self, uid: UUID | str | None = None):
         """
         Initialise an instance of **Metadata**.
 
-        :param uid:
+        :param uid: (*UUID* | *str* | *None*) Unique identifier for the metadata.
         """
         super().__init__()
-        self._metadict = {
+        self._metadict: Dict[str, Any] = {
             "uid": uid if uid is not None else uuid4()
-
         }
-        self._mappings = {
-            "sql": None,
-            "neo4j": None,
-            "sumo": None
-
-        }
+        RelationalMappingsMixin.__init__(self)
 
     @property
-    def metadata(self):
+    def metadata(self) -> Dict[str, Any]:
         """
         Get the metadata.
+
         :return: (*dict*) metadata
         """
         return self._metadict
 
-    def __getattr__(self, item):
+    def __getattr__(self, item: str) -> Any:
         """
         Get an attribute of the metadata.
-        :param item: metadata key.
-        :return: Value of the metadata key.
+
+        :param item: (*str*) metadata key.
+        :return: (*Any*) Value of the metadata key.
+        :raises AttributeError: if the key does not exist.
         """
         keys = item.split('.')
         value = self._metadict
-        for key in keys:
-            value = value[key]
-        return value
+        try:
+            for key in keys:
+                value = value[key]
+            return value
+        except KeyError:
+            raise AttributeError(f"'Metadata' object has no attribute '{item}'")
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
-        :return: (str) representation of the metadata.
+        :return: (*str*) representation of the metadata.
         """
         return f"Metadata({self._metadict})"
 
-    def get_mappings(self):
-        """
-        Get all the mappings for *Metadata*.
-        :return: (dict) mappings
-        """
-        return self._mappings
-
-    @property
-    def mappings(self):
-        """
-        :return: (dict) Metadata mappings.
-        """
-        return self.get_mappings()
-
     def to_dict(self) -> Dict[str, Any]:
+        """
+        Convert the metadata to a dictionary.
+
+        :return: (*dict*) metadata as a dictionary.
+        """
         return {
             'uid': str(self._metadict['uid']),
             'mappings': self._mappings
@@ -183,16 +236,33 @@ class Metadata(BaseThing):
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'Metadata':
+        """
+        Create a Metadata instance from a dictionary.
+
+        :param data: (*dict*) data to create the Metadata instance from.
+        :return: (*Metadata*) the created Metadata instance.
+        """
         instance = cls(uid=data['uid'])
         instance._mappings = data['mappings']
         return instance
 
     def __eq__(self, other: Any) -> bool:
+        """
+        Check if two Metadata instances are equal.
+
+        :param other: (*Any*) the other instance to compare with.
+        :return: (*bool*) True if equal, False otherwise.
+        """
         if not isinstance(other, Metadata):
             return False
         return self._metadict == other._metadict
 
     def __hash__(self) -> int:
+        """
+        Get the hash of the Metadata instance.
+
+        :return: (*int*) hash of the Metadata instance.
+        """
         return hash(self._metadict['uid'])
 
 

@@ -36,7 +36,7 @@ class Thing:
 
 class ThingBuilder:  # TODO: Add methods
     """
-
+    A **ThingBuilder** is a class that is used to build instances of a **Thing**.
     """
 
     def __init__(self):
@@ -63,6 +63,12 @@ class ThingBuilder:  # TODO: Add methods
         logging.info(f"Thing built: {self._thing}{'' if not return_thing else ' (returned)'}")
         if return_thing:
             return self._thing
+
+class ThingManager:
+    """
+    A **ThingManager** is a class that is used to manage instances of a **Thing**.
+    """
+    pass
 
 
 def load_thing():  # TODO: Implement

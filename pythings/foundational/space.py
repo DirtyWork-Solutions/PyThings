@@ -1,8 +1,6 @@
-from pythings.base import FoundationalThing
-from pythings.commons.entity import BaseEntity
+from pythings.base import FoundationalThing, Relationship, Attribute
 
-
-class SpatialThing(BaseEntity, FoundationalThing):
+class SpatialThing(FoundationalThing):
     """
     Represents a spatial entity.
     """

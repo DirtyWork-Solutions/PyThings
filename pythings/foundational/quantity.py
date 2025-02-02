@@ -2,7 +2,7 @@ from pint import UnitRegistry
 
 from pythings.base import FoundationalThing
 
-ureg = UnitRegistry()
+unit_registry = UnitRegistry()
 
 class Quantity(FoundationalThing):
     """

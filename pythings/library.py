@@ -1,6 +1,3 @@
-"""
-Central entry point for the package
-"""
 import logging
 from abc import ABC
 from typing import Any, Union
