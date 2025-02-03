@@ -1,0 +1,6 @@
+gplwordnet~=1.0.3  # enriched
+networkx~=3.4.2  # enriched
+numpy~=2.2.2  # enriched
+pandas~=2.2.3  # enriched
+sqlalchemy
+scipy
