@@ -1,14 +1,20 @@
+"""
+TODO: Package docs
+"""
+
 from typing import Any, List
 
-from entity.bases import BaseEntity
+from pythings.entity.bases import BaseAbstractEntity
 
 
-class AbstractEntity(BaseEntity):
+class AbstractEntity(BaseAbstractEntity):
     """
     Base class for all abstract entities.
     """
     def __init__(self, name: str = 'unknown abstract entity'):
         """
+        # TODO: method docs
+
         :param name:
         """
         self.name = name
@@ -18,6 +24,12 @@ class Attribute(AbstractEntity):
     Represents an attribute of an entity.
     """
     def __init__(self, name: str = 'attribute', value: Any = None):
+        """
+        TODO: method docs
+
+        :param name:
+        :param value:
+        """
         super().__init__(name)
         self.value = value
 
@@ -26,6 +38,12 @@ class Set(AbstractEntity):
     Represents a collection or group of entities.
     """
     def __init__(self, name: str = 'unknown set', members: List = None):
+        """
+        TODO: Method docs
+
+        :param name:
+        :param members:
+        """
         super().__init__(name)
         self.members = members if members else []
 
@@ -42,6 +60,7 @@ class Set(AbstractEntity):
     def remove_member(self):
         """
         Remove a member from the collection/set.
+
         :return:
         """
         raise NotImplementedError()
