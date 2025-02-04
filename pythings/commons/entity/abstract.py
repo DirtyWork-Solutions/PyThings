@@ -1,10 +1,26 @@
 """
 TODO: Package docs
 """
-
+from abc import ABC, abstractmethod
 from typing import Any, List
 
-from pythings.entity.bases import BaseAbstractEntity
+from pythings.__base__ import BaseEntity
+
+
+class BaseAbstractEntity(BaseEntity, ABC):  # TODO: Implement base class
+    """
+    TODO: Class docs
+    """
+
+    @abstractmethod
+    def __init__(self):
+        """
+        TODO: method docs
+        """
+        super().__init__()
+
+    def __repr__(self):
+        return f"PhysicalEntity()"
 
 
 class AbstractEntity(BaseAbstractEntity):
