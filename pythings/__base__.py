@@ -4,8 +4,8 @@ TODO: root module docs
 
 from abc import abstractmethod, ABC
 
-from pythings.__errors__ import PyThingsException
-from utils.patterns.mixins import MetadataMixin, MappingsMixin
+from pythings.commons.entity.abstract import BaseAbstractEntity
+
 
 class BaseEntity(ABC):  # TODO: Implement base class
     """
@@ -23,39 +23,8 @@ class BaseEntity(ABC):  # TODO: Implement base class
     def __repr__(self):
         return f"Entity()"
 
-class BasePhysicalEntity(BaseEntity, ABC):  # TODO: Implement base class
-    """
-    TODO: Class docs
-    """
 
-    @abstractmethod
-    def __init__(self):
-        """
-        TODO: Method docs
-        """
-        super().__init__()
-
-    def __repr__(self):
-        return f"PhysicalEntity()"
-
-
-class BaseAbstractEntity(BaseEntity, ABC):  # TODO: Implement base class
-    """
-    TODO: Class docs
-    """
-
-    @abstractmethod
-    def __init__(self):
-        """
-        TODO: method docs
-        """
-        super().__init__()
-
-    def __repr__(self):
-        return f"PhysicalEntity()"
-
-
-class BaseAttribute(BaseAbstractEntity,ABC):  # TODO: Implement base class
+class BaseAttribute(BaseAbstractEntity, ABC):  # TODO: Implement base class
     """
     TODO: Class docs
     """
