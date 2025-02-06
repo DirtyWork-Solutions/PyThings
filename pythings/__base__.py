@@ -103,7 +103,7 @@ class BaseAbstractEntity(BaseEntity, ABC):
                  identifier: str,
                  label: Optional[str] = None,
                  description: str = "",
-                 sumo_class: str = "Entity") -> None:
+                 sumo_class: str = "AbstractEntity") -> None:
         super().__init__(identifier, label, description, sumo_class)
 
 
@@ -114,7 +114,7 @@ class BasePhysicalEntity(BaseEntity, ABC):
                  identifier: str,
                  label: Optional[str] = None,
                  description: str = "",
-                 sumo_class: str = "Entity") -> None:
+                 sumo_class: str = "PhysicalEntity") -> None:
         super().__init__(identifier, label, description, sumo_class)
 
 
@@ -176,6 +176,7 @@ class BaseRelationship(BaseEntity, ABC):
         self.relation_type: str = relation_type
         self.target: BaseEntity = target
 
+        # Add relationship to source and target entities
         self.source.add_relationship(self)
         self.target.add_incoming_relationship(self)
 
