@@ -1,30 +1,8 @@
 """
 TODO: Module docs
 """
-from abc import ABC, abstractmethod
-
-from pythings.commons.entity.abstract import BaseAbstractEntity
-from pythings.__base__ import BaseEntity
-
-
-class BaseRelationship(BaseAbstractEntity, ABC):
-    """
-    Base class for all relationship classes.
-    """
-
-    @abstractmethod
-    def __init__(self):
-        """
-        TODO: Method docs
-        """
-        super().__init__()
-
-        #
-        pass
-
-    def __repr__(self):
-        return f"Relationship()"
-
+from pythings.__base__ import BaseEntity, Entity, BaseAttribute, BaseAbstractEntity, BasePhysicalEntity, \
+    BaseRelationship
 
 class Relationship(BaseRelationship):
     """

@@ -1,26 +1,12 @@
 """
 TODO: Package docs
 """
+
 from abc import ABC, abstractmethod
 from typing import Any, List
 
-from pythings.__base__ import BaseEntity
-
-
-class BaseAbstractEntity(BaseEntity, ABC):  # TODO: Implement base class
-    """
-    TODO: Class docs
-    """
-
-    @abstractmethod
-    def __init__(self):
-        """
-        TODO: method docs
-        """
-        super().__init__()
-
-    def __repr__(self):
-        return f"PhysicalEntity()"
+from pythings.__base__ import BaseEntity, Entity, BaseAttribute, BaseAbstractEntity, BasePhysicalEntity, \
+    BaseRelationship
 
 
 class AbstractEntity(BaseAbstractEntity):
@@ -35,7 +21,8 @@ class AbstractEntity(BaseAbstractEntity):
         """
         self.name = name
 
-class Attribute(AbstractEntity):
+
+class Attribute(BaseAttribute):
     """
     Represents an attribute of an entity.
     """
@@ -48,6 +35,7 @@ class Attribute(AbstractEntity):
         """
         super().__init__(name)
         self.value = value
+
 
 class Set(AbstractEntity):
     """

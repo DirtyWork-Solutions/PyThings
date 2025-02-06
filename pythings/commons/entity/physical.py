@@ -3,23 +3,8 @@ TODO: module docs
 """
 from abc import ABC, abstractmethod
 
-from pythings.__base__ import BaseEntity
-
-
-class BasePhysicalEntity(BaseEntity, ABC):  # TODO: Implement base class
-    """
-    TODO: Class docs
-    """
-
-    @abstractmethod
-    def __init__(self):
-        """
-        TODO: Method docs
-        """
-        super().__init__()
-
-    def __repr__(self):
-        return f"PhysicalEntity()"
+from pythings.__base__ import BaseEntity, Entity, BaseAttribute, BaseAbstractEntity, BasePhysicalEntity, \
+    BaseRelationship
 
 
 class PhysicalEntity(BasePhysicalEntity):  # TODO: implement class
