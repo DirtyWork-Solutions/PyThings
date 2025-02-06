@@ -5,6 +5,7 @@ TODO: root module docs
 from abc import abstractmethod, ABC
 
 from pythings.commons.entity.abstract import BaseAbstractEntity
+from pythings.utils.patterns.mixins import MetadataMixin
 
 
 class BaseEntity(ABC):  # TODO: Implement base class
@@ -37,7 +38,7 @@ class BaseAttribute(BaseAbstractEntity, ABC):  # TODO: Implement base class
         super().__init__()
 
 
-class BaseMeta(ABC):  # TODO: Implement base class
+class BaseMeta(MetadataMixin, ABC):  # TODO: Implement base class
     """
     TODO: Class docs
     """
@@ -47,6 +48,7 @@ class BaseMeta(ABC):  # TODO: Implement base class
         """
         TODO: Method docs
         """
+        super().__init__()
 
     def get_all_meta(self, as_dict: bool = True):  # TODO: Implement method
         """
