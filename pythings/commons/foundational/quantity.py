@@ -13,13 +13,14 @@ from pythings.__base__ import BaseEntity, Entity, BaseAttribute, BaseAbstractEnt
 ureg = UnitRegistry()
 
 
-class Quantity:
+class Quantity(BaseAbstractEntity):
     """
     A base class representing any measurable quantity.
     Uses Pint internally to manage numerical values and units.
     """
 
-    def __init__(self, value, unit):
+    def __init__(self, value, unit,
+                 identifier: str | UUID = uuid4()):
         """
         Initializes a Quantity.
 
@@ -27,6 +28,8 @@ class Quantity:
           - value: The numerical magnitude.
           - unit: A string or Pint unit defining the measurement unit.
         """
+        super().__init__(identifier=identifier, label=str(unit) + " quantity", description="A quantity with a unit.",
+                         sumo_class="Quantity")  # TODO: Check inputs and SUMO class
         self._quantity = value * ureg(unit)
 
     @property
@@ -100,8 +103,8 @@ class DerivedQuantity(Quantity):
     """
     A subclass of Quantity that provides a human-friendly label for derived units.
 
-    Derived units (e.g., area, velocity, acceleration) arise from arithmetic
-    on base quantities. This class inspects the dimensionality (via Pint) and
+    Derived units (*e.g., area, velocity, acceleration*) arise from arithmetic
+    on base quantities. This class inspects the dimensionality (*via Pint*) and
     maps it to a known friendly name.
     """
     # Map from a frozenset of (dimension, exponent) pairs to a derived unit name.
@@ -122,6 +125,7 @@ class DerivedQuantity(Quantity):
         """
         Inspects the quantity's dimensionality and returns a friendly derived unit name.
         If the dimensionality is not recognized, returns a string representation of it.
+        :return: A human-friendly name for the derived unit **or** a string representation.
         """
         # Get the dimensionality from the internal Pint quantity.
         # Pint returns a dict like {'[length]': 1, '[time]': -1} for velocity.
