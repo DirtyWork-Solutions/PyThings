@@ -1,21 +1,28 @@
 [build-system]
 requires = ["setuptools", "wheel"]
-build-backend = setuptools.build_meta
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "pythings"
 version = "0.1.0"
-description = ""
-authors =[{}]
-license = { file = "LICENSE.md"}
+description = "A Python project for managing Things and their relationships."
+authors = [{name = "Aidan Hogg", email = "aidan.hogg@dirtywork.solutions"}]
+license = {file = "LICENSE.md"}
 readme = "README.md"
 dependencies = [
-    "",
-    ""
+    "cachetools",
+    "pydantic"
 ]
 
 [project.urls]
-Homepage = ""
-Documentation = ""
-Source = ""
-Issues = ""
+Homepage = "https://open.dirtywork.solutions/pythings"
+Documentation = "https://open.dirtywork.solutions/pythings/docs"
+Source = "https://github.com/DirtyWork-Solutions/PyThings"
+Issues = "https://github.com/DirtyWork-Solutions/PyThings/tree/main/.github/ISSUE_TEMPLATE"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.extension]
+name = "pythings.extension"
+sources = ["src/pythings/extension.c"]

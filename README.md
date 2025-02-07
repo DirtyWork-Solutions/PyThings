@@ -3,7 +3,7 @@
 __THIS PROJECT IS IN ALPHA!__ _YOU HAVE  BE WARNED!_
 ****
 
-PyThings is an open-source development framework design to model, interact with and 
+PyThings is an open-source and general purpose development framework design to model, interact with and 
 manipulate __any entity__ - abstract or tangible - through a structured model inspired by the _Suggested Upper Merged
 Ontology_. It's core focus is on providing a rich, extensible foundation for representing and working with __Things__ in
 a flexible and scalable way.
