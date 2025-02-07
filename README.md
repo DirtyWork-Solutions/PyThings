@@ -3,11 +3,15 @@
 __THIS PROJECT IS IN ALPHA!__ _YOU HAVE  BE WARNED!_
 ****
 
-The __PyThings__ project is an attempt at providing a modular and comprehensive library for abstracting, managing and
-defining... well everything and anything.
+PyThings is an open-source development framework design to model, interact with and 
+manipulate __any entity__ - abstract or tangible - through a structured model inspired by the _Suggested Upper Merged
+Ontology_. It's core focus is on providing a rich, extensible foundation for representing and working with __Things__ in
+a flexible and scalable way.
 
-Initially appeared on
-[gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2). But the page cannot open anymore so that is why I have moved it here.
+More than a typical object-oriented framework; it's a __generalised, structured way to model reality itself__.
+Whether you're building AI-driven applications knowledge graphs, automation systems, or just looking to cut down your workload.
+PyThings provides a __standardised yet flexible__ foundation.
+
 
 ## Getting Started
 
@@ -18,38 +22,40 @@ for notes on deploying the project on a live system.
 ### Prerequisites
 
 Requirements for the software and other tools to build, test and push 
-- [Example 1](https://www.example.com)
+- [Python 3.13](https://www.example.com)
 - [Example 2](https://www.example.com)
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development
-environment running
+PyThings is available as a Python package.
 
-Say what the step will be
+To install:
 
-    Give the example
+    pip instal pythings
 
-And repeat
+Additional domains and extensions can be found here, and follow the convention:
 
-    until finished
+    # Domain and definition expansions
+    pip install pythings-<domain_name>
+    
+    # Plugins
+    pip install pythings-ext-<name>
 
-End with an example of getting some data out of the system or using it
-for a little demo
+Official domains are also downloadable within the codebase but this is generally not recommended.
 
 ## Extending & Expanding
 
 Explain how to run the automated tests for this system
 
-### Sample Tests
+### General Extensions
 
-Explain what these tests test and why
+General extensions are those generally affecting the functionality of the package.
 
     Give an example
 
-### Style test
+### Domain Specific Extensions
 
-Checks if the best practices and the right coding style has been used.
+DSFs are those that are specific to a particular domain or use case, and typically expand or form part of the lower ontology.
 
     Give an example
 
