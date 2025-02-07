@@ -1,0 +1,14 @@
+pip~=23.2.1
+setuptools~=75.8.0
+pint~=0.24.4
+shapely~=2.0.6
+pydantic~=2.10.6
+cachetools~=5.5.1
+fastapi~=0.115.8
+semantic~=1.0.3
+
+rdflib~=7.1.3
+sparqlwrapper~=2.0.0
+pylode~=3.2.1
+pyshacl~=0.30.0
+owlrl~=7.1.3

@@ -2,7 +2,7 @@ from pint import UnitRegistry
 
 from pythings.base import FoundationalThing
 
-ureg = UnitRegistry()
+unit_registry = UnitRegistry()
 
 class Quantity(FoundationalThing):
     """
@@ -14,6 +14,7 @@ class Quantity(FoundationalThing):
         :param value: (float) Numeric value of the quantity.
         :param unit: (str) Unit as a string (e.g. "kg", "m", "second")
         """
+        super().__init__()
         self.value = value
         self.unit = unit
 
