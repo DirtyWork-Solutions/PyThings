@@ -171,6 +171,16 @@ class BaseRelationship(BaseEntity, ABC):
                  target: BaseEntity,
                  label: Optional[str] = None,
                  description: str = "") -> None:
+        """
+        Initializes a Relationship.
+
+        :param identifier:
+        :param source:
+        :param relation_type:
+        :param target:
+        :param label:
+        :param description:
+        """
         super().__init__(identifier, label, description, sumo_class="Relationship")
         self.source: BaseEntity = source
         self.relation_type: str = relation_type
