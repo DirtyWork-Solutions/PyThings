@@ -1,13 +1,11 @@
 """
 TODO: Module docs for Quantity
 """
-from typing import Optional
 from uuid import UUID, uuid4
 
-from pint import UnitRegistry, Unit
+from pint import UnitRegistry
 
-from pythings.__base__ import BaseEntity, Entity, BaseAttribute, BaseAbstractEntity, BasePhysicalEntity, \
-    BaseRelationship
+from src.pythings.__base__ import BaseAbstractEntity
 
 # Initialize the Pint unit registry.
 ureg = UnitRegistry()

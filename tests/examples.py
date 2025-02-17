@@ -1,6 +1,6 @@
 import unittest
 
-from pythings.base import Thing, Metadata, BaseThing
+from src.pythings import Thing, Metadata, BaseThing
 
 
 class TestThing(unittest.TestCase):

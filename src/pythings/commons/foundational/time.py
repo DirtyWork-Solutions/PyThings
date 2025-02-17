@@ -16,8 +16,7 @@ except ImportError:
     parser = None
 
 # Assuming these are part of your framework:
-from pythings.__base__ import (BaseEntity, Entity, BaseAttribute, BaseAbstractEntity,
-                               BasePhysicalEntity, BaseRelationship)
+from src.pythings.__base__ import (BaseAbstractEntity)
 
 
 class TimePoint(BaseAbstractEntity):
@@ -340,7 +339,6 @@ class TimeInterval(BaseAbstractEntity):
 
 # --- Example Usage ---
 if __name__ == "__main__":
-    from time import sleep
 
     # Create TimePoints with current time
     now = TimePoint(datetime.now())
