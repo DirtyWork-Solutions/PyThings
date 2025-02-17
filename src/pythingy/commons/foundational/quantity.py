@@ -5,7 +5,7 @@ from uuid import UUID, uuid4
 
 from pint import UnitRegistry
 
-from src.pythings.__base__ import BaseAbstractEntity
+from src.pythingy.__base__ import BaseAbstractEntity
 
 # Initialize the Pint unit registry.
 ureg = UnitRegistry()

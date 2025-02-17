@@ -1,13 +1,13 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pythings',
+    name='pythingy',
     version='0.1.0',
     description='abstraction, interaction, and management of anything and everything',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     author='DirtyWork Solutions Limited',
-    author_email='pythings@open.dirtywork.solutions',
+    author_email='pythingy@open.dirtywork.solutions',
     url='https://github.com/DirtyWork-Solutions/PyThings',
     packages=find_packages(where='src'),
     package_dir={'': 'src'},

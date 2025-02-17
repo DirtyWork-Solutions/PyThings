@@ -3,22 +3,23 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pythings"
+name = "pythingy"
 version = "0.1.0"
-description = "A Python project for managing Things and their relationships."
+description = "A PyForge project for managing Things and their relationships."
 authors = [{name = "Aidan Hogg", email = "aidan.hogg@dirtywork.solutions"}]
 license = {file = "LICENSE.md"}
 readme = "README.md"
 dependencies = [
     "cachetools",
-    "pydantic"
+    "pydantic",
+    "pyutile"
 ]
 
 [project.urls]
-Homepage = "https://open.dirtywork.solutions/pythings"
-Documentation = "https://open.dirtywork.solutions/pythings/docs"
-Source = "https://github.com/DirtyWork-Solutions/PyThings"
-Issues = "https://github.com/DirtyWork-Solutions/PyThings/tree/main/.github/ISSUE_TEMPLATE"
+Homepage = "https://open.dirtywork.solutions/pythingy"
+Documentation = "https://open.dirtywork.solutions/pythingy/docs"
+Source = "https://github.com/DirtyWork-Solutions/PyThingy"
+Issues = "https://github.com/DirtyWork-Solutions/PyThingy/tree/main/.github/ISSUE_TEMPLATE"
 
 [tool.setuptools.packages.find]
 where = ["src"]

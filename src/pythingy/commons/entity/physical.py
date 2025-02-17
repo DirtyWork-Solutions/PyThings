@@ -2,7 +2,7 @@
 TODO: module docs
 """
 
-from src.pythings.__base__ import BasePhysicalEntity
+from src.pythingy.__base__ import BasePhysicalEntity
 
 
 class PhysicalEntity(BasePhysicalEntity):  # TODO: implement class

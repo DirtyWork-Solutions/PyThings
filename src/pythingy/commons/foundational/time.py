@@ -16,7 +16,7 @@ except ImportError:
     parser = None
 
 # Assuming these are part of your framework:
-from src.pythings.__base__ import (BaseAbstractEntity)
+from src.pythingy.__base__ import (BaseAbstractEntity)
 
 
 class TimePoint(BaseAbstractEntity):
