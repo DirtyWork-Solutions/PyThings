@@ -18,9 +18,8 @@ setup(
         'configparser~=7.1.0',
         'loguru~=0.7.3',
         'pyyaml~=6.0.2',
-        'pyutil~=0.1.0',
-        'pyextend~=0.1.0',
-        'pythings~=0.1.0'
+        'pyutile~=0.1.0',
+        'pyextendable~=0.1.0'
     ],
     classifiers=[
         'Programming Language :: Python :: 3',
