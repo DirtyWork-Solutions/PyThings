@@ -14,8 +14,7 @@ import xml.etree.ElementTree as ET
 
 import networkx as nx
 
-from pythings.__base__ import BaseEntity, Entity, BaseAttribute, BaseAbstractEntity, BasePhysicalEntity, \
-    BaseRelationship
+from src.pythings.__base__ import BaseEntity, BaseRelationship
 
 
 class RelationType(Enum):

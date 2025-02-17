@@ -1,6 +1,3 @@
-from pythings.__base__ import BaseEntity, Entity, BaseAttribute, BaseAbstractEntity, BasePhysicalEntity, \
-    BaseRelationship
-
 import numpy as np
 from shapely.geometry import Point as ShapelyPoint, Polygon
 from shapely.affinity import translate as shapely_translate, rotate as shapely_rotate, scale as shapely_scale

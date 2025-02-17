@@ -1,10 +1,8 @@
 """
 TODO: module docs
 """
-from abc import ABC, abstractmethod
 
-from pythings.__base__ import BaseEntity, Entity, BaseAttribute, BaseAbstractEntity, BasePhysicalEntity, \
-    BaseRelationship
+from src.pythings.__base__ import BasePhysicalEntity
 
 
 class PhysicalEntity(BasePhysicalEntity):  # TODO: implement class

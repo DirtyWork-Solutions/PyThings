@@ -2,11 +2,9 @@
 TODO: Package docs
 """
 
-from abc import ABC, abstractmethod
 from typing import Any, List
 
-from pythings.__base__ import BaseEntity, Entity, BaseAttribute, BaseAbstractEntity, BasePhysicalEntity, \
-    BaseRelationship
+from src.pythings.__base__ import BaseAttribute, BaseAbstractEntity
 
 
 class AbstractEntity(BaseAbstractEntity):
