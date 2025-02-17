@@ -22,7 +22,3 @@ Issues = "https://github.com/DirtyWork-Solutions/PyThings/tree/main/.github/ISSU
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
-[tool.setuptools.extension]
-name = "pythings.extension"
-sources = ["src/pythings/extension.c"]
