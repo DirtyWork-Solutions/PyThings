@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pythingy"
+name = "pythingd"
 version = "0.1.0"
 description = "A PyForge project for managing Things and their relationships."
 authors = [{name = "Aidan Hogg", email = "aidan.hogg@dirtywork.solutions"}]
@@ -16,10 +16,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://open.dirtywork.solutions/pythingy"
-Documentation = "https://open.dirtywork.solutions/pythingy/docs"
-Source = "https://github.com/DirtyWork-Solutions/PyThingy"
-Issues = "https://github.com/DirtyWork-Solutions/PyThingy/tree/main/.github/ISSUE_TEMPLATE"
+Homepage = "https://open.dirtywork.solutions/pythingd"
+Documentation = "https://open.dirtywork.solutions/pythingd/docs"
+Source = "https://github.com/DirtyWork-Solutions/PyThings"
+Issues = "https://github.com/DirtyWork-Solutions/PyThings/tree/main/.github/ISSUE_TEMPLATE"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -4,7 +4,7 @@ TODO: Package docs
 
 from typing import Any, List
 
-from src.pythingy.__base__ import BaseAttribute, BaseAbstractEntity
+from src.pythingd.__base__ import BaseAttribute, BaseAbstractEntity
 
 
 class AbstractEntity(BaseAbstractEntity):
